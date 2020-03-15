@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  chatroom: one
+  User: one
+
+two:
+  chatroom: two
+  User: two
