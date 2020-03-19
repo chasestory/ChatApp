@@ -33,7 +33,6 @@ class ChatroomsController < ApplicationController
     end
   end
 
-
   def update
     respond_to do |format|
       if @chatroom.update(chatroom_params)
