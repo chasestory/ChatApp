@@ -5,22 +5,22 @@
   <%= @chatroom.name %>
 </p>
 
-<div data-behavior="new_messages">
+<div data-behavior="messages" data-chatroom-id='<%= @chatroom.id %>'>
   <% @messages.each do |message| %>
     <div>
       <%= render message %>
     </div>
   <% end %>
-
-
-  <%= link_to 'Edit', edit_chatroom_path(@chatroom) %> |
-  <%= link_to 'Back', chatrooms_path %>
-  <hr />
-
-
-  <%= form_for [@chatroom, Message.new], remote: true do |f| %>
-    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-    <%= f.label "Message" %>
-    <%= f.text_area :body, rows: 1, class: 'form-control' %>
-  <% end %>
 </div>
+
+
+<%= link_to 'Edit', edit_chatroom_path(@chatroom) %> |
+<%= link_to 'Back', chatrooms_path %>
+<hr />
+
+
+<%= form_for [@chatroom, Message.new], data: {remote: true } do |f| %>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= f.label "Message" %>
+  <%= f.text_area :body, rows: 1, class: 'form-control' %>
+<% end %>
