@@ -57,7 +57,9 @@
           <% if user_signed_in? %>
             <h5>Chatrooms</h5>
             <ul>
-              
+              <% current_user.chatrooms.each do |chatroom| %>
+                <li><%= link_to chatroom.name, "#" %></li>
+              <% end %>
             </ul>
 
             <h5>Users</h5>
