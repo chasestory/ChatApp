@@ -5,7 +5,7 @@
   <%= @chatroom.name %>
 </p>
 
-<div data-behavior="messages">
+<div data-behavior="new_messages">
   <% @messages.each do |message| %>
     <div>
       <strong><%= message.user.username %>: </strong><%= message.body %>
@@ -18,7 +18,8 @@
   <hr />
 
 
-  <%= form_for [@chatroom, Message.new] do |f| %>
+  <%= form_for [@chatroom, Message.new], remote: true do |f| %>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
     <%= f.label "Message" %>
     <%= f.text_area :body, rows: 1, class: 'form-control' %>
   <% end %>
