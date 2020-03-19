@@ -11,8 +11,6 @@ class MessagesController < ApplicationController
 		redirect_to @chatroom
 	end
 
-
-
 	private
 
 	def set_chatroom
