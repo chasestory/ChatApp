@@ -1,4 +1,12 @@
+handleVisibilityChange = ->
+	if !document.hidden
+		true
+		#1 update ladt read time stamp
+
+		
 $(document).on "turbolinks:load", ->
+	$(document).on "visibilitychange", handleVisibilityChange
+
 	$("#new_message").on "keypress", (e) ->
 		if e && e.keyCode == 13
 			e.preventDefault()
