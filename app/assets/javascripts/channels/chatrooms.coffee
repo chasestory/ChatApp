@@ -16,7 +16,8 @@ App.chatrooms = App.cable.subscriptions.create "ChatroomsChannel",
         if Notification.permission == "granted"
           new Notification(data.username, {body: data.body})
       else
-        active_chatroom.append("<div><strong>#{data.username}:</strong> #{data.body}</div>")
+        App.last_read.update(data.chatroom_id)
+      active_chatroom.append("<div><strong>#{data.username}:</strong> #{data.body}</div>")
     else
 
       $("[data-behavior='chatroom-link'][data-chatroom-id='#{data.chatroom_id}']").css("font-weight", "bold")

@@ -5,12 +5,18 @@
   <%= @chatroom.name %>
 </p>
 
+<% unread_messages = false %>
 <div data-behavior="messages" data-chatroom-id='<%= @chatroom.id %>'>
   <% @messages.each do |message| %>
-    <div>
-      <%= render message %>
-    </div>
-  <% end %>
+    <% if !unread_messages && @chatroom_user.last_read_at < message.created_at %>
+      <% unread_messages = true %>
+      <div class="strike"><span>Unread Message</span></div>
+    <% end %>
+
+      <div>
+        <%= render message %>
+      </div>
+    <% end %>
 </div>
 
 
