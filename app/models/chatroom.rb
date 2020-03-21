@@ -3,7 +3,7 @@ class Chatroom < ApplicationRecord
 	has_many :users, through: :chatroom_users
 	has_many :messages
 
-	scope :public_channel, -> { where(direct_message: false) }
+	scope :public_channels, -> { where(direct_message: false) }
 	scope :direct_messages, -> { where(direct_message: true)}
 
 	def self.direct_message_for_users(users)
