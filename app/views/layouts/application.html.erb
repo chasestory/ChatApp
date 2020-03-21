@@ -55,7 +55,7 @@
           <% if user_signed_in? %>
               <li class="dropdown pull-left">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Channels<span class="caret"></span></a>
-                <ul class="dropdown-menu" style="z-index:10000">
+                <ul class="dropdown-menu">
                   <h5>Chatrooms</h5>
                   <% current_user.chatrooms.public_channels.each do |chatroom| %>
                     <li><%= link_to chatroom.name, chatroom,  data: { behavior: "chatroom-link", chatroom_id: chatroom.id } %></li>
