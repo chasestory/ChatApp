@@ -15,6 +15,7 @@ class Chatroom < ApplicationRecord
 		else
 			chatroom = new(name: name, direct_message: true)
 			chatroom.users = users
+			chatroom.save
 			chatroom
 		end
 	end
