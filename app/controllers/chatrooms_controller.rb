@@ -2,7 +2,7 @@ class ChatroomsController < ApplicationController
   before_action :set_chatroom, only: [:show, :edit, :update, :destroy]
 
   def index
-    @chatrooms = Chatroom.all
+    @chatrooms = Chatroom.public_channels
   end
 
 	def show 
