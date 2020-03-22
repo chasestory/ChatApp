@@ -17,10 +17,22 @@
  @import "bootstrap";
  @import "bootstrap-sprockets";
 
- html body	{
-	min-width:700px;        /* Suppose you want minimum width of 1000px */
+
+body	{
+	min-width:1000px;        /* Suppose you want minimum width of 1000px */
 	width: auto !important;  /* Firefox will set width as auto */
-	width:700px;            /* As IE6 ignores !important it will set width as 1000px; */
+	width:1000px;            /* As IE6 ignores !important it will set width as 1000px; */
+}
+
+.form-control.message {
+	width: 450px !important;
+}
+
+.main-body {
+	background-color: #D3D3D3;
+	max-width: 1000px;
+	width: auto !important;
+	border-radius: 2em;;
 }
 
  .strike {
