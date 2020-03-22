@@ -1,29 +1,31 @@
-<p id="notice"><%= notice %></p>
+<div style="margin: 15px;">
+  <p id="notice"><%= notice %></p>
 
-<h1>Chatrooms</h1>
+  <h1>Chatrooms</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @chatrooms.each do |chatroom| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= chatroom.name %></td>
-        <td><%= link_to 'Show', chatroom %></td>
-        <td><%= link_to 'Edit', edit_chatroom_path(chatroom) %></td>
-        <td><%= link_to 'Destroy', chatroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Join', chatroom_chatroom_users_path(chatroom), method: :post %></td>
-        <td><%= link_to 'Leave', chatroom_chatroom_users_path(chatroom), method: :delete %></td>
+        <th>Channel List</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @chatrooms.each do |chatroom| %>
+        <tr style="margin-top:5px;">
+          <td><%= chatroom.name %></td>
+          <td><%= link_to 'Show', chatroom %></td>
+          <td><%= link_to 'Edit', edit_chatroom_path(chatroom) %></td>
+          <td><%= link_to 'Destroy', chatroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Join', chatroom_chatroom_users_path(chatroom), method: :post %></td>
+          <td><%= link_to 'Leave', chatroom_chatroom_users_path(chatroom), method: :delete %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Chatroom', new_chatroom_path %>
+  <br>
+
+  <%= link_to 'New Chatroom', new_chatroom_path %>
+</div>

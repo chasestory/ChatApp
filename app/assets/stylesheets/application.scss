@@ -18,10 +18,13 @@
  @import "bootstrap-sprockets";
 
 
-body	{
-	min-width:1000px;        /* Suppose you want minimum width of 1000px */
-	width: auto !important;  /* Firefox will set width as auto */
-	width:1000px;            /* As IE6 ignores !important it will set width as 1000px; */
+h5 {
+	font-weight: bold;
+}
+
+i.times {
+	font-size: 12px;
+	font-style: italic;
 }
 
 .form-control.message {
@@ -30,11 +33,25 @@ body	{
 
 .main-body {
 	background-color: #D3D3D3;
-	max-width: 1000px;
+	min-width: 700px;
+	max-width: 2000px;
 	width: auto !important;
-	border-radius: 2em;;
+	border-radius: 2em;
 }
 
+td a {
+	margin: 4px;
+}
+
+.main-body.settings-form {
+	background-color: #D3D3D3;
+	width: auto !important;
+	border-radius: 2em;
+}
+
+.channels {
+	z-index: 10000;
+}
  .strike {
   display: block;
   text-align: center;
@@ -65,4 +82,9 @@ body	{
 .strike > span:after {
   left: 100%;
   margin-left: 15px;
+}
+
+
+.active {
+	background-color: lightskyblue;
 }
