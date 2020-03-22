@@ -52,9 +52,6 @@ svg.key {
 	position: absolute;
 	opacity: 0;
 	visibility: hidden;
-	/* define an animation for the keyhole, to introduce it
-	paused by default, run with a timeout in JavaScript
-	*/
 	animation: showKey 0.5s 0.5s paused ease-out forwards;
 }
 .ghost {
