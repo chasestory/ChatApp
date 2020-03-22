@@ -73,9 +73,6 @@ svg.key {
 	padding: 1rem;
 	visibility: hidden;
 	opacity: 0;
-	/* have each string of text introduced as the ghost returns from the right edge of the screen, and for the length of time it takes to cover the central portion (a fourth, which becomes an eight as the animation length is half the total duration) */
-	/* the delay for an hypothetical duration of 40s is 7.5s for the first, 27.5s for the second and finally 40s for the last
-	*/
 	animation:
 		showText calc(var(--animation-duration)/8) calc(var(--animation-duration)*3/16) ease-out forwards,
 		showNewText calc(var(--animation-duration)/8) calc(var(--animation-duration)*27/40) ease-out forwards,
