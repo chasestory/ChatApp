@@ -75,8 +75,6 @@ svg.key {
 	opacity: 0;
 	/* have each string of text introduced as the ghost returns from the right edge of the screen, and for the length of time it takes to cover the central portion (a fourth, which becomes an eight as the animation length is half the total duration) */
 	/* the delay for an hypothetical duration of 40s is 7.5s for the first, 27.5s for the second and finally 40s for the last
-	in fractions and with a bit of math it boils down to 3/16, 27/40 and 1
-	// ! remember to include a slight delay in the animation of the key and keyhole
 	*/
 	animation:
 		showText calc(var(--animation-duration)/8) calc(var(--animation-duration)*3/16) ease-out forwards,
