@@ -8,13 +8,8 @@
 	--animation-sentence: 'You know you\'re supposed to leave, right?';
 	--animation-duration: 40s;
 }
-* {
-	z-index:10000;
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-}
-body {
+
+body.error-layout {
 	width: 100%;
 	font-family: var(--font-text);
 	color: var(--color-theme);

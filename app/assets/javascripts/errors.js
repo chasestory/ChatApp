@@ -24,7 +24,7 @@
 
 
 	// retrieve the dimensions of the key (to have the key exactly where the cursor would lie)
-	const keyBox = key.getBoundingClientRect();
+	// const keyBox = key.getBoundingClientRect();
 	// console.log(keyBox);
 
 
@@ -32,7 +32,7 @@
 	// include a timeout with the specified time frame
 	const timeoutID = setTimeout(() => {
 		// after the specified time, change the cursor as to seemingly grab the key
-		key.parentElement.parentElement.style.cursor = "grab";
+		// key.parentElement.parentElement.style.cursor = "grab";
 
 		// introduce the key and keyhole svg elements by triggering the paused-by-default animation
 		key.style.animationPlayState = "running";
