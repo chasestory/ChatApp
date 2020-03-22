@@ -1,10 +1,10 @@
 <p id="notice"><%= notice %></p>
 <div style="margin-left: 5px;margin-bottom: 15px;">
 
-  <p>
+  <div align="center">
     <strong>Channel:</strong>
     <i><%= @chatroom.name %></i>
-  </p>
+  </div>
 
   <% unread_messages = false %>
   <div data-behavior="messages" data-chatroom-id='<%= @chatroom.id %>'>
@@ -30,7 +30,7 @@
       <%= f.text_area :body, rows: 1, class: 'form-control message', autofocus: true %>
     <% end %>
   </div>
-  
+
   <hr />
   <div class="divider"><div/>
 

@@ -1,6 +1,6 @@
 class ChatroomsController < ApplicationController
   before_action :set_chatroom, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_admin!, only: [:edit, :destroy]
   def index
     @chatrooms = Chatroom.public_channels
   end
