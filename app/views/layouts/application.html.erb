@@ -9,15 +9,7 @@
 
   </head>
     <script>
-      $( document ).ready(function() {
-        var selector = '.dropdown-menu li a';
 
-        $(selector).on('click', function(e){
-          e.preventDefault()
-            $(selector).removeClass('active');
-            $(this).addClass('active');
-        });
-      });
     </script>
 
   <body>
@@ -64,12 +56,12 @@
       <div class="row">
         <div class="col-sm-2 channels" style="position:fixed;top:70px;left:0;">
           <% if user_signed_in? %>
-              <li class="dropdown pull-left">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Channels<span class="caret"></span></a>
+              <div class="dropdown" id="menu" pull-left">
+                <a href="#" class="dropdown-toggle btn btn-primary" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Channels<span></span></a>
                 <ul class="dropdown-menu" id="ul" style="margin:3px;">
                   <h5>Chatrooms</h5>
                   <% current_user.chatrooms.public_channels.each do |chatroom| %>
-                    <li class="nav-item">
+                    <li class="nav-item <%= active_class(chatroom_path(chatroom)) %>">
                         <%= link_to chatroom.name, chatroom,  data: { behavior: "chatroom-link", chatroom_id: chatroom.id } %>
                     </li>
                     <li role="separator" class="divider"></li>
@@ -77,12 +69,12 @@
                   <h5>Users</h5>
                   <% (User.all - [current_user]).each do |user| %>
                     <li role="separator" class="divider"></li>
-                    <li class="nav-item">
+                    <li class="nav-item <%= active_class(direct_message_path(user)) %>">
                         <%= link_to user.username, direct_message_path(user.id), data: { behavior: "chatroom-link", chatroom_id: Chatroom.direct_message_for_users([current_user, user]).id } %>
                     </li>
                   <% end %>
                 </ul>
-              </li>
+              </div>
           <% end %>
         </div>
       </div>
