@@ -23,7 +23,7 @@
 
   <hr />
 
-  <div>
+  <div style="margin-right:5px;margin-left:5px;">
     <%= form_for [@chatroom, Message.new] do |f| %>
       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
       <%= f.label "Message" %>
@@ -34,7 +34,7 @@
   <hr />
   <div class="divider"><div/>
 
-  <%= link_to 'Edit', edit_chatroom_path(@chatroom) %> |
+  <%= link_to 'Edit', edit_chatroom_path(@chatroom) if current_user.try(:admin?) %> |
   <%= link_to 'Back', chatrooms_path %>
 
 </div>
