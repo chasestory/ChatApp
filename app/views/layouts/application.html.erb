@@ -49,9 +49,10 @@
       </div>
     </nav>
 
-    <div class="fluid-container" style="margin-top:70px">
+    <div class="container" style="margin-top:70px">
       <div class="row">
-        <div class="col-sm-2 channels" style="position:fixed;top:70px;left:0;">
+        <div class="col-sm-2" style="position:fixed;top:70px;left:0;">
+        
           <% if user_signed_in? %>
               <div class="panel panel-primary" id="menu" pull-left">
                 <%# <a href="#" class="dropdown-toggle btn btn-primary" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Channels & Users<span></span></a> %>
@@ -83,10 +84,13 @@
               </div>
           <% end %>
         </div>
+        <div class="col-sm-10 col-sm-offset-2 main-body">
+          <div class="row">
+            <%= yield %>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="col-sm-10 col-sm-offset-2 main-body">
-      <%= yield %>
-    </div>
+
   </body>
 </html>
