@@ -8,4 +8,18 @@ class DirectMessagesController < ApplicationController
 		@chatroom_user = current_user.chatroom_users.find_by(chatroom_id: @chatroom.id)
 		render "chatrooms/show"
 	end
+
+
+	def destroy
+		message = Message.find(params[:id])
+    if message.destroy
+			respond_to do |format|
+				format.html { render status: 200, notice: 'message was successfully destroyed.' }
+				format.json { head :no_content }
+			end
+		else
+			flash.notice "error deleting"
+		end
+	end
+
 end

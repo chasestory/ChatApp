@@ -14,7 +14,7 @@
         <div class="strike"><span>Unread Message</span></div>
       <% end %>
 
-        <div align="left">
+        <div align="left" data-message-id="<%= message.id %>">
           <%= render message %>
         </div>
       <% end %>
@@ -38,3 +38,9 @@
   <%= link_to 'Back', chatrooms_path %>
 
 </div>
+
+<script>
+	$('#notice').show('slow').delay(2000).hide('slow');
+	$('#notice').addClass("alert alert-success")
+  // $('#notice').html('Successfully deleted message');
+  </script>
