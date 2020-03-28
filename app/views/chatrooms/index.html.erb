@@ -14,7 +14,7 @@
                 <%= link_to 'Join', chatroom_chatroom_users_path(chatroom), method: :post, class: "btn btn-default btn-xs pull-right" %>
                 <%= link_to 'Leave', chatroom_chatroom_users_path(chatroom), method: :delete, class: "btn btn-default btn-xs pull-right" %>
                 <%= link_to "x", chatroom, method: :delete, data: { confirm: 'Are you sure?' 
-                }, class: "btn btn-default btn-xs pull-right"  if current_user.admin?  %>
+                }, class: "btn btn-default btn-xs pull-right"  if current_user.try(:admin?)  %>
               </span>
               <h5 class="panel-title"><%= chatroom.name %></h5>
             </div>
