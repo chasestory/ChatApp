@@ -28,7 +28,7 @@ App.chatrooms = App.cable.subscriptions.create "ChatroomsChannel",
 
       else
         App.last_read.update(data.chatroom_id)
-      active_chatroom.append("<div><span><i class='times' style='margin-left:3px; margin-right:3px;'>#{today_date}</i><i class='times' style='margin-right:7px;'>#{today_time}</i></span><span style='border-right:1px solid black;'></span><strong style='margin-left:5px;'>#{data.username}:</strong> #{data.body}</div>")
+      active_chatroom.append("<div align='left'><span><i class='times' style='margin-left:3px; margin-right:3px;'>#{today_date}</i><i class='times' style='margin-right:7px;'>#{today_time}</i></span><span style='border-right:1px solid black;'></span><strong style='margin-left:5px;'>#{data.username}:</strong> #{data.body}</div>")
       console.log today_date, today_time
     else
       $("[data-behavior='chatroom-link'][data-chatroom-id='#{data.chatroom_id}']").css("font-weight", "bold")
