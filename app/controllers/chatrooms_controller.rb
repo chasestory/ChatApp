@@ -1,7 +1,9 @@
 class ChatroomsController < ApplicationController
   before_action :set_chatroom, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_admin!, only: [:edit, :destroy]
+
   def index
+    @users = User.all.where.not(id: current_user)
     @chatrooms = Chatroom.public_channels
   end
 
@@ -25,7 +27,8 @@ class ChatroomsController < ApplicationController
 
     respond_to do |format|
       if @chatroom.save
-        format.html { redirect_to @chatroom, notice: 'Chatroom was successfully created.' }
+        
+        format.html { redirect_to chatrooms_path, notice: 'Chatroom was successfully created.' }
         format.json { render :show, status: :created, location: @chatroom }
       else
         format.html { render :new }
