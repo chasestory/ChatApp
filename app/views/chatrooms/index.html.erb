@@ -10,7 +10,7 @@
           <div class="panel panel-default" data-conversation-id="<%= chatroom.id %>">
             <div class="panel-heading">
               <span>
-                <%= link_to 'Edit', edit_chatroom_path(chatroom), class: "btn btn-default btn-xs pull-right" if current_user.admin? %>
+                <%= link_to 'Edit', edit_chatroom_path(chatroom), class: "btn btn-default btn-xs pull-right" if current_user.try(:admin?) %>
                 <%= link_to 'Join', chatroom_chatroom_users_path(chatroom), method: :post, class: "btn btn-default btn-xs pull-right" %>
                 <%= link_to 'Leave', chatroom_chatroom_users_path(chatroom), method: :delete, class: "btn btn-default btn-xs pull-right" %>
                 <%= link_to "x", chatroom, method: :delete, data: { confirm: 'Are you sure?' 
