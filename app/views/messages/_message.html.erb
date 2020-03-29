@@ -1,6 +1,8 @@
 <div class="divider" style="margin: 5px;">
 	<% [cur_time = message.created_at - 6.hours]if message.created_at.present? %> 
+	<% admin = current_user.admin? %>
+	<% my_message = current_user.id == message.user_id %>
 	<span style="margin-right:5px;"><i class="times"> <%= cur_time.strftime("%m/%d/%Y %I:%M %p") %></i></span><span style="border-right:1px solid black;"></span>
 								<strong style="margin-left: 5px;"><%= message.user.username %>: </strong><%= message.body %><span class="pull-right"><%=  link_to 'Remove', "/chatrooms/#{@chatroom.id}/messages/#{message.id}",  method: :delete, data: { confirm: 'Are you sure?' 
-                }, class: "btn btn-default btn-xs pull-right" if current_user.try(:admn?) || current_user.id === message.user_id %></span>
+                }, class: "btn btn-default btn-xs pull-right" if admin || my_message %></span>
 </div>

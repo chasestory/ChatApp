@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
 	def destroy
 		message = Message.find(params[:id])
 
-		if current_user.id == message.user_id
+		if current_user.id == message.user_id || current_user.try(:admin?)
 			respond_to do |format|
 				if message.destroy
 					format.html { redirect_to chatroom_path(params[:chatroom_id]), notice: "Successfully deleted message!" }
