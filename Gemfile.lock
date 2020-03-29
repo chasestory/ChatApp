@@ -103,6 +103,7 @@ GEM
     ffi (1.12.2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    gritter (1.2.0)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
     io-like (0.3.1)
@@ -242,6 +243,7 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails
   devise
+  gritter (= 1.2.0)
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)

@@ -16,7 +16,8 @@
 
  @import "bootstrap";
  @import "bootstrap-sprockets";
-
+ @import "gritter";
+ 
  @media only screen and (max-width: 768px) {
   /* For mobile phones: */
   [class*="col-"] {
