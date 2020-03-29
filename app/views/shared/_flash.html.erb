@@ -1,0 +1,8 @@
+
+<% if flash[:alert] %>
+	<%= js add_gritter(flash[:alert], title: "ChatApp Alert", sticky: false,time: 6000, image: :warning) %>
+<% elsif flash[:error] %>
+	<%= js add_gritter(flash[:error], title: "ChatApp Error", sticky: false, time: 6000, image: :error) %>
+<% else %>
+	<%= js add_gritter(flash[:notice], title: "ChatApp Notification", sticky: false, time: 6000, image: :notice) %>
+<% end %>
