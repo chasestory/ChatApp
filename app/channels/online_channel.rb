@@ -15,7 +15,7 @@ class OnlineChannel < ApplicationCable::Channel
     # ActionCable.server.pubsub.redis_connection_for_subscriptions.sadd "offline", current_user.id if current_user != "online"
     # stream_from "online:users"
 
-    html = ApplicationController.render(partial: "users/offline", locals: { user: current_user })
-    broadcast_to "users", { id: current_user.id, status: "offline", html: html }
+    # html = ApplicationController.render(partial: "users/offline", locals: { user: current_user })
+    broadcast_to "users", { id: current_user.id, status: "offline" }
   end
 end

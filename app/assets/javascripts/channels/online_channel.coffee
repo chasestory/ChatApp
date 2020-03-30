@@ -14,4 +14,4 @@ App.online = App.cable.subscriptions.create "OnlineChannel",
       online.insertAdjacentHTML('beforeend', data.html)
 
     if data.status == "offline" && el != null 
-    	online.insertAdjacentHTML('beforeend', data.html)
+      el.remove()
