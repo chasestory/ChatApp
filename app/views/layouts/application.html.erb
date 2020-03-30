@@ -80,6 +80,15 @@
                       <hr />
                     <% end %>
                   </div>
+                    <div class="panel-heading">
+                      <h5 class="panel-title">Online Users</h5>
+                    </div>
+                    <div class="panel-body" align="left" id="online-users">
+                      <div class="nav-item">
+                        <%= render partial: 'users/online', collection: User.online, as: :user  %>
+                        <%# <%= render partial: 'users/offline', collection: User.offline, as: :user %>
+                      </div>
+                    </div>
                 </div>
               </div>
           <% end %>

@@ -25,6 +25,22 @@
   }
 }
 
+.dot {
+  height: 15px;
+  width: 15px;
+  background-color: rgb(37, 250, 48);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.offline {
+  height: 15px;
+  width: 15px;
+  background-color: rgb(118, 121, 118);
+  border-radius: 50%;
+  display: inline-block;
+}
+
 h5 {
 	margin-left:3px;
 	font-weight: bold;
